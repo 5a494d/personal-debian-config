@@ -1,0 +1,5 @@
+sudo apt-get install udisks
+Once installed you can detach a USB drive with the following commands...
+
+sudo udisks --unmount /dev/sdb1
+sudo udisks --detach /dev/sdb
