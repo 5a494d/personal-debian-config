@@ -22,12 +22,18 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # start x windows manager
-startx
+#startx
 
 # start initial configuration to urxvt
-urxvtd --quiet --opendisplay --fork
+#urxvtd --quiet --opendisplay --fork
 
 # load background desktop image -> wallpaper
-feh --randomize --bg-fill /home/zim/Pictures/wallpaper/varios/nyan_cat.jpg
+#feh --randomize --bg-fill /home/zim/Pictures/wallpaper/varios/nyan_cat.jpg
+
+###########################################################################
+# keychain server autoloader 
+###########################################################################
+/usr/bin/keychain $HOME/.ssh/some-service
+source $HOME/.keychain/$HOSTNAME-sh
 
 
