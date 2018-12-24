@@ -1,9 +1,18 @@
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
+	. "$HOME/.bashrc"
     fi
 fi
 
@@ -13,14 +22,8 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # load ssh-keys
-/usr/bin/keychain --clear $HOME/.ssh/bit_home
+/usr/bin/keychain --ignore-missing  --clear $HOME/.ssh/bitbucket_home $HOME/.ssh/github_home $HOME/.ssh/gitlab_home
 source $HOME/.keychain/$HOSTNAME-sh
 
-# start x windows manager
+#Init X Windows manager
 startx
-
-# start initial configuration to urxvt
-#urxvtd --quiet --opendisplay --fork
-
-# load background desktop image -> wallpaper
-feh --bg-fill --randomize --no-fehbg ~/Pictures/wallpapers/*
