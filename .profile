@@ -22,7 +22,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # load ssh-keys
-/usr/bin/keychain --ignore-missing  --clear $HOME/.ssh/bitbucket_home $HOME/.ssh/github_home $HOME/.ssh/gitlab_home
+/usr/bin/keychain $HOME/.ssh/bit_home $HOME/.ssh/github_home
 source $HOME/.keychain/$HOSTNAME-sh
 
 #Init X Windows manager
